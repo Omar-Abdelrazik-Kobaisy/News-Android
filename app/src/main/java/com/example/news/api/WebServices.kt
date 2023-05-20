@@ -12,7 +12,7 @@ interface WebServices {
 
     //https://newsapi.org/v2/top-headlines/sources
     @GET("v2/top-headlines/sources?")
-    fun getSources(@Query("apiKey") apiKey:String , @Query("category") category : String):Call<SourcesResponse>
+    suspend fun getSources(@Query("apiKey") apiKey:String , @Query("category") category : String):SourcesResponse
     @GET("v2/everything")
     fun getNews(@Query("apikey") apiKey:String , @Query("sources")source: String):Call<NewsResponse>
 }
